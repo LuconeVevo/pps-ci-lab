@@ -10,6 +10,10 @@ tasks.withType<ScalaCompile>().configureEach {
     )
 }
 
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
 repositories {
     mavenCentral()
 }
@@ -17,4 +21,7 @@ repositories {
 dependencies {
     val scalaVersion = "3.8.3"
     implementation("org.scala-lang:scala3-library_3:${scalaVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
 }
