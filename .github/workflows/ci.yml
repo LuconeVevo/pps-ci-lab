@@ -10,6 +10,6 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           java-version: 25
-          distribution: ''
+          distribution: 'jdk'
       - name: Build
         run: ./gradlew build
